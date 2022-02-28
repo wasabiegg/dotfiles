@@ -81,6 +81,7 @@ call plug#end()
 
 
 let g:neomake_python_enabled_makers = ['flake8', 'mypy']
+let g:neomake_typescript_enabled_makers = ['tslint']
 call neomake#configure#automake('nrwi', 500)
 nnoremap <leader>nn :lnext<CR>
 nnoremap <leader>pp :lprev<CR>
@@ -106,7 +107,7 @@ let g:gruvbox_invert_selection='0'
 " colorscheme gruvbox
 lua << EOF
 require("github-theme").setup({
-  theme_style = "light",
+  theme_style = "dark_default",
   function_style = "italic",
   sidebars = {"qf", "vista_kind", "terminal", "packer"},
 
