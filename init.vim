@@ -26,7 +26,7 @@ set laststatus=0                        " Always display the status line
 set number                              " Line numbers
 set relativenumber                      " Relative numbers
 set cursorline                          " Enable highlighting of the current line
-set background=dark                     " tell vim what the background color looks like
+set background=light                     " tell vim what the background color looks like
 set showtabline=2                       " Always show tabs
 set noshowmode                          " We don't need to see things like -- INSERT -- anymore
 set nobackup                            " This is recommended by coc
@@ -52,6 +52,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 " Make sure you use single quotes
 
 " On-demand loading
+Plug 'adigitoleo/vim-mellow', { 'tag': '*' }
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'vim-airline/vim-airline'
 Plug 'easymotion/vim-easymotion'
@@ -99,35 +100,33 @@ if exists('+termguicolors')
     let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 endif
 
-let g:gruvbox_invert_selection='0'
+" let g:gruvbox_invert_selection='0'
 " end change error color to red
 
-
 " color scheme
-" colorscheme gruvbox
-lua << EOF
-require("github-theme").setup({
-  theme_style = "dark_default",
-  function_style = "italic",
-  sidebars = {"qf", "vista_kind", "terminal", "packer"},
+colorscheme mellow
 
-  -- Change the "hint" color to the "orange" color, and make the "error" color bright red
-  colors = {hint = "orange", error = "#ff0000"},
 
-  -- Overwrite the highlight groups
-  overrides = function(c)
-    return {
-      htmlTag = {fg = c.red, bg = "#282c34", sp = c.hint, style = "underline"},
-      DiagnosticHint = {link = "LspDiagnosticsDefaultHint"},
-      -- this will remove the highlight groups
-      TSField = {},
-    }
-  end
-})
-EOF
+"lua << EOF
+"require("github-theme").setup({
+  "theme_style = "dark_default",
+  "function_style = "italic",
+  "sidebars = {"qf", "vista_kind", "terminal", "packer"},
 
-set background=dark " use dark mode
+  "-- Change the "hint" color to the "orange" color, and make the "error" color bright red
+  "colors = {hint = "orange", error = "#ff0000"},
 
+  "-- Overwrite the highlight groups
+  "overrides = function(c)
+    "return {
+      "htmlTag = {fg = c.red, bg = "#282c34", sp = c.hint, style = "underline"},
+      "DiagnosticHint = {link = "LspDiagnosticsDefaultHint"},
+      "-- this will remove the highlight groups
+      "TSField = {},
+    "}
+  "end
+"})
+"EOF
 
 lua << EOF
 local nvim_lsp = require('lspconfig')
