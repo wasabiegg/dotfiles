@@ -26,7 +26,7 @@ set laststatus=0                        " Always display the status line
 set number                              " Line numbers
 set relativenumber                      " Relative numbers
 set cursorline                          " Enable highlighting of the current line
-set background=dark                     " tell vim what the background color looks like
+set background=light                     " tell vim what the background color looks like
 set showtabline=2                       " Always show tabs
 set noshowmode                          " We don't need to see things like -- INSERT -- anymore
 set nobackup                            " This is recommended by coc
@@ -53,6 +53,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 " On-demand loading
 Plug 'adigitoleo/vim-mellow', { 'tag': '*' }
+Plug 'morhetz/gruvbox'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'vim-airline/vim-airline'
 Plug 'easymotion/vim-easymotion'
@@ -93,23 +94,23 @@ let g:highlightedyank_highlight_duration = 1000
 
 " change error color to red
 set termguicolors
-" let g:gruvbox_contrast_dark = 'hard'
+"let g:gruvbox_contrast_dark = 'hard'
 
 "if exists('+termguicolors')
     "let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
     "let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 "endif
 
-" let g:gruvbox_invert_selection='0'
+"let g:gruvbox_invert_selection='0'
 " end change error color to red
 
 " color scheme
-colorscheme mellow
-
+" colorscheme mellow
+colorscheme gruvbox
 
 "lua << EOF
 "require("github-theme").setup({
-  "theme_style = "dark_default",
+  "theme_style = "dark",
   "sidebars = {"qf", "vista_kind", "terminal", "packer"},
 
   "-- Change the "hint" color to the "orange" color, and make the "error" color bright red
